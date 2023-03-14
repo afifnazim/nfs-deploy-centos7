@@ -80,6 +80,11 @@ To mount permanently, we will have to make changes in the /etc/fstab file and ad
 192.168.1.200:/nfs-share   /mnt/nfs  nfs  defaults  0  0 
 ```
 
+We can also use ```showmount``` command to check the available nfs-servers in the network - 
+```
+showmount -e 192.168.1.200
+```
+
 
 Here are some more important commands for NFS-
 
