@@ -48,4 +48,29 @@ Some other options we can use in “/etc/exports” file for file sharing is as 
 <b>no_root_squash:</b> This phrase allows root to connect to the designated directory.
 
 
+We will have to change the firewall settings to allow nfs traffic in to the nfs-server - 
+```
+firewall-cmd --permanent --zone=public --add-service=nfs
+firewall-cmd --permanent --zone=public --add-service=mountd
+firewall-cmd --permanent --zone=public --add-service=rpc-bind
+firewall-cmd --reload
+```
 
+
+## NFS Client Side Configurations: 
+
+Installing nfs packages in the server side -
+```
+yum install nfs-utils
+```
+
+Create a mount point for the nfs share mount - 
+```
+mkdir /mnt/nfs
+```
+
+Mount the nfs-server using below commands - 
+```
+mount -t nfs 192.168.1.200:/nfs-share /mnt/nfs
+```
+In the above command ```-t``` is the type, which in our case is nfs and IP address in the server's IP. Please change the IP address as per your nfs-server IP.
