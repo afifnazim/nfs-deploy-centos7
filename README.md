@@ -73,4 +73,20 @@ Mount the nfs-server using below commands -
 ```
 mount -t nfs 192.168.1.200:/nfs-share /mnt/nfs
 ```
-In the above command ```-t``` is the type, which in our case is nfs and IP address in the server's IP. Please change the IP address as per your nfs-server IP.
+In the above command ```-t``` is the type, which in our case is nfs and IP address in the server's IP. Please change the IP address as per your nfs-server IP. This will be a temporary mount. 
+
+To mount permanently, we will have to make changes in the /etc/fstab file and add the below line at last of the file - 
+```
+192.168.1.200:/nfs-share   /mnt/nfs  nfs  defaults  0  0 
+```
+
+
+Here are some more important commands for NFS-
+
+<b>showmount -e : </b> Shows the available shares on your local machine <br>
+<b>showmount -e <server-ip or hostname>: </b> Lists the available shares at the remote server <br>
+<b>showmount -d : </b> Lists all the sub directories <br>
+<b>exportfs -v : </b> Displays a list of shares files and options on a server <br>
+<b>exportfs -a : </b> Exports all shares listed in /etc/exports, or given name <br>
+<b>exportfs -u : </b> Unexports all shares listed in /etc/exports, or given name <br>
+<b>exportfs -r : </b> Refresh the server’s list after modifying /etc/exports <br>
