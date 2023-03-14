@@ -31,6 +31,12 @@ systemctl enable nfs-server
 Now we need to configure the exports file to enable sharing for the clients. So we will open the exports file and add the line -  
 ```
 vi /etc/exports
-/nfs-share 192.168.1.250(rw,sync,no_root_squash) ###Change the IP address as per your nfs-server IP address###
+/nfs-share 192.168.1.250(rw,sync,no_root_squash)
 ```
+In the above command, change your the IP address to your clients IP or we can use * to allow all users from this server. We can also allow specific block of IPs for any specific share - 
+```
+/nfs-share *(rw,sync,no_root_squash) ## Allow all IPs
+/nfs-share 192.168.1.1/24(rw,sync,no_root_squash) ## Allow specific block
+```
+
 
