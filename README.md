@@ -41,10 +41,10 @@ In the above command, change your the IP address to your clients IP or we can us
 
 Some other options we can use in “/etc/exports” file for file sharing is as follows.
 
-<b>ro:</b> With the help of this option we can provide read only access to the shared files i.e client will only be able to read.
-<b>rw:</b> This option allows the client server to both read and write access within the shared directory.
-<b>sync:</b> Sync confirms requests to the shared directory only once the changes have been committed.
-<b>no_subtree_check:</b> This option prevents the subtree checking. When a shared directory is the subdirectory of a larger file system, nfs performs scans of every directory above it, in order to verify its permissions and details. Disabling the subtree check may increase the reliability of NFS, but reduce security.
+<b>ro:</b> With the help of this option we can provide read only access to the shared files i.e client will only be able to read. <br>
+<b>rw:</b> This option allows the client server to both read and write access within the shared directory. <br>
+<b>sync:</b> Sync confirms requests to the shared directory only once the changes have been committed. <br>
+<b>no_subtree_check:</b> This option prevents the subtree checking. When a shared directory is the subdirectory of a larger file system, nfs performs scans of every directory above it, in order to verify its permissions and details. Disabling the subtree check may increase the reliability of NFS, but reduce security. <br>
 <b>no_root_squash:</b> This phrase allows root to connect to the designated directory.
 
 
